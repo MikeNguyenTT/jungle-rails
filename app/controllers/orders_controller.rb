@@ -2,7 +2,21 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    line_items = LineItem.where(order_id: @order.id)
+    product_ids = line_items.map{ |line_item| line_item.product_id }
+    products = Product.where(id: product_ids)
+
+    @enhanced_items = line_items.map{ |line_item| {line_item:line_item, product:products.find{|product| product.id == line_item.product_id} } }
+
+    # puts @enhanced_items.inspect
+
   end
+
+  def order_total_cents
+    @enhanced_items.map {|item| item[:line_item].total_price_cents}.sum
+  end
+  helper_method :order_total_cents
+  
 
   def create
     charge = perform_stripe_charge
