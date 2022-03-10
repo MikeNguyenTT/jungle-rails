@@ -1,0 +1,35 @@
+<h1>User registration!</h1>
+
+<%= form_for :user, url: '/users' do |f| %>
+  <table class="table">
+    <tbody>
+      <tr>
+        <td>Firstname: </td>
+        <td><%= f.text_field :firtname %></td>
+      </tr>
+      <tr>
+        <td>Lastname: </td>
+        <td><%= f.text_field :lastname %></td>
+      </tr>
+      <tr>
+        <td>Email: </td>
+        <td><%= f.text_field :email %></td>
+      </tr>
+      <tr>
+        <td>Password: </td>
+        <td><%= f.password_field :password %>
+      </tr>
+      <tr>
+        <td>Password Confirmation: </td>
+        <td><%= f.password_field :password_confirmation %></td>
+      </tr>
+      <tr>   
+        <td></td>
+        <td><%= f.submit "Submit" %></td>
+      </tr>
+    </tbody>
+  <table>
+<% end %>
+
+
+  
