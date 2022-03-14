@@ -4,7 +4,7 @@ RSpec.describe Product, type: :model do
 
   describe 'Validations' do
     # validation tests/examples here
-    it 'validates all fields presence and id auto-assigned' do
+    it 'should have all fields presence and id auto-assigned' do
       @category = Category.new(name: "Motobike")
       @product = @category.products.new(name: "10 inch wheel", description: "Wheel for very small motorbike", quantity: 4, price_cents: 2000)
 
