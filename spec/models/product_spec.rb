@@ -10,7 +10,6 @@ RSpec.describe Product, type: :model do
 
       @category.save!
       @product.save!
-      # puts @category.products.inspect
 
       expect(@product.id).to be_present
       expect(@product.name).to be_present
