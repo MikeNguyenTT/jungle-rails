@@ -19,7 +19,7 @@ RSpec.feature "Visitor navigate to product details page", type: :feature, js: tr
   scenario "They see all products" do
     # ACT
     visit root_path
-    visit '/products/3'
+    all('a', :text => 'Details')[1].click
 
     # DEBUG
     save_screenshot
