@@ -23,6 +23,6 @@ RSpec.feature "User Logins", type: :feature, js: true do
     save_screenshot
 
     # VERIFY
-    expect(page).to have_content('Logout'), count: 1
+    expect(page).to have_content 'Logout', count: 1
   end
 end
