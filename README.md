@@ -20,4 +20,13 @@ Testing: RSpec and Capybara
 * PostgreSQL 9.x
 * Stripe
 
-##
+## Screenshot
+
+#### Add items to cart and order processing with Strip
+
+![Add items to cart and order processing with Strip](https://github.com/MikeNguyenTT/jungle-rails/blob/master/docs/cart_and_order.gif?raw=true)
+
+
+#### Add items to cart and order processing with Strip
+
+![Only admin can create new categories and new products](https://github.com/MikeNguyenTT/jungle-rails/blob/master/docs/new_product_admin.gif?raw=true)
