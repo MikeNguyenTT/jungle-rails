@@ -29,4 +29,4 @@ Testing: RSpec and Capybara
 
 #### Only admin can create new categories and new products
 
-![Only admin can create new categories and new products](https://github.com/MikeNguyenTT/jungle-rails/blob/master/docs/new_product_admin.gif?raw=true)
+![Only admin can create new categories and new products](https://github.com/MikeNguyenTT/jungle-rails/blob/master/docs/new_product_by_admin.gif?raw=true)
