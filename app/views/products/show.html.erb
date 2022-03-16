@@ -22,6 +22,26 @@
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
           <dd><%= humanized_money_with_symbol @product.price %></dd>
+          <dt>Reviews</dt>
+          <dd><% @reviews.each do |review| %>
+            <%= review.description %>
+            <% if review.created_by_current_user?(current_user) %>
+              <%= link_to fa_icon('trash'), [@product, review], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
+
+            <% end%>
+            <br/>
+          <% end %>
+          </dd>
+          <% if current_user %>
+            <dt>Leave Review</dt>
+            <dd>
+              <%= form_for [@product, Review.new] do |f| %>
+                  <%= f.text_area :description %>
+                  <%= f.select :rating, [1, 2, 3, 4, 5]%>
+                  <%= f.submit "Review", class: 'btn btn-primary' %>
+              <% end %>
+            </dd>
+          <% end %>
         </dl>
       </div>
     </div>
