@@ -4,7 +4,8 @@
     <h1>My Cart</h1>
   </header>
   <% if enhanced_cart.length == 0 %>
-    There is no item in your cart
+    There is no item in your cart. 
+    <%= link_to 'Go To Home', :root %>
   <% else%>
     <div class="panel panel-default items">
       <table class="table table-bordered table-striped">
