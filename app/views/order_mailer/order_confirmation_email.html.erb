@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Order Confirmation Id <%= @order.id %></h1>
+
+    Order Confirmation Id <%= @order.id %>
+    <p>You have successfully placed order</p>
+
+Total amount: <%= humanized_money_with_symbol line_item.total_price_cents / 100 %>
+Items: 
+<% @order.line_items.each do |item| %>
+  Item: <%=item.product.name%>, quantity: <%=item.quantity%>, total: <%= humanized_money_with_symbol item.total_price_cents / 100 %>
+<% end %>
+    <p>Thank you and have a great day!</p>
+
+  </body>
+</html>

@@ -1,7 +1,11 @@
 # Jungle
 
-A mini e-commerce application built with Ruby on Rails
+A mini e-commerce application built with Ruby on Rails.
+Tech stack: Ruby on Rails MVC, PostgresSQL.
 Testing: RSpec and Capybara
+- User can either shop anonmously or sign-up and login.
+- Credit card processing is done with Strip testing account
+- Only admin can create new categories and products
 
 ## Setup
 
