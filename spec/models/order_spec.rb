@@ -21,11 +21,11 @@ RSpec.describe Order, type: :model do
     # pending test 2
     it 'does not deduct quantity from products that are not in the order' do
       @order = Order.new(total_cents: 30000, stripe_charge_id: 1, email: "abc@abc.com")
-      @order.line_items.new(product_id: @product2.id, quantity: 3, item_price_cents: @product2.price_cents, total_price_cents: @product2.price_cents * 3)
+      @order.line_items.new(product_id: @product1.id, quantity: 3, item_price_cents: @product1.price_cents, total_price_cents: @product1.price_cents * 3)
       @order.save!
 
-      @product1.reload
-      expect(@product1.quantity).to eq(5)
+      @product2.reload
+      expect(@product2.quantity).to eq(10)
     end
   end
 end
